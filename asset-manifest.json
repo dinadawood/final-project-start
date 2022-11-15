@@ -1,19 +1,25 @@
 {
   "files": {
     "main.css": "/final-project-start/static/css/main.8e2438d2.css",
-    "main.js": "/final-project-start/static/js/main.e0c2ea96.js",
+    "main.js": "/final-project-start/static/js/main.23f89a28.js",
     "static/js/787.4ef7427d.chunk.js": "/final-project-start/static/js/787.4ef7427d.chunk.js",
+    "static/media/top1.png": "/final-project-start/static/media/top1.f57cd6afbbcfb69f17e8.png",
     "static/media/pants1.png": "/final-project-start/static/media/pants1.b349508a697f593b9b95.png",
+    "static/media/top2.png": "/final-project-start/static/media/top2.b4b870732ca0c6e472cf.png",
+    "static/media/skirt3.png": "/final-project-start/static/media/skirt3.2c0c3c0b32e2f5b61f57.png",
+    "static/media/jacket1.png": "/final-project-start/static/media/jacket1.bfdb9ce6afcee43b3416.png",
+    "static/media/sweats1.png": "/final-project-start/static/media/sweats1.fbb5d321de8b04f7fc75.png",
     "static/media/skirt1.png": "/final-project-start/static/media/skirt1.e66d8f992ca3e70843e9.png",
+    "static/media/skirt2.png": "/final-project-start/static/media/skirt2.380536dfc7869817830d.png",
     "static/media/sweatshirt1.png": "/final-project-start/static/media/sweatshirt1.7d6beebdef8f6bb5f4a4.png",
     "static/media/crop_top1.png": "/final-project-start/static/media/crop_top1.7349297ca153e366e401.png",
     "index.html": "/final-project-start/index.html",
     "main.8e2438d2.css.map": "/final-project-start/static/css/main.8e2438d2.css.map",
-    "main.e0c2ea96.js.map": "/final-project-start/static/js/main.e0c2ea96.js.map",
+    "main.23f89a28.js.map": "/final-project-start/static/js/main.23f89a28.js.map",
     "787.4ef7427d.chunk.js.map": "/final-project-start/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8e2438d2.css",
-    "static/js/main.e0c2ea96.js"
+    "static/js/main.23f89a28.js"
   ]
 }
