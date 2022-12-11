@@ -45,6 +45,13 @@ function ElementList() {
         p.shown = true;
         addtoWorkSpace(inWorkSpace.concat(p));
     }
+    function removeElementFromScreen(id: number, id2?: number) {
+        let draggedElement = inWorkSpace.filter((e) => e.id != id);
+        if (id2) {
+            draggedElement = draggedElement.filter((e) => e.id != id2);
+        }
+        addtoWorkSpace(draggedElement);
+    }
     return (
         <CardContext.Provider value={{ markAsDone }}>
             <div>
