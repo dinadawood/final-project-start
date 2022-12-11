@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useDrop } from "react-dnd";
 import itemTypes from "../interfaces/itemTypes";
 
-import "./Container.css";
+import "./Trashbin.css";
 import "../App.css";
 import { CardContext } from "./ClothingList";
 
@@ -14,21 +14,21 @@ interface ITEM {
     type: string;
     ID: number;
 }
-function Container(props: ContainerProps) {
+function Trashbin(props: ContainerProps) {
     const { children } = props;
-    const { putInWorkSpace } = useContext(CardContext);
+    const { removefromScreen } = useContext(CardContext);
     const [, drop] = useDrop({
         accept: itemTypes.CLOTHING,
-        drop: (item: ITEM, monitor) => putInWorkSpace(item.ID, monitor),
+        drop: (item: ITEM) => removefromScreen(item.ID),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
     });
     return (
-        <div className="container-middle" ref={drop}>
+        <div className="container-right" ref={drop}>
             {children}
         </div>
     );
 }
 
-export default Container;
+export default Trashbin;
