@@ -9,6 +9,7 @@ import { clothing } from "../clothingList";
 import ClothingObject from "./ClothingObject";
 
 import "./ClothingList.css";
+import Hanger from "./Hanger";
 import Container from "./Container";
 
 export const CardContext = createContext({
@@ -39,12 +40,7 @@ function ElementList() {
             </div>
         ));
     }
-    function markAsDone(id: number) {
-        const draggedElement = proplist.filter((task, i) => task.id === id)[0];
-        const p = { ...draggedElement };
-        p.shown = true;
-        addtoWorkSpace(inWorkSpace.concat(p));
-    }
+
     function removeElementFromScreen(id: number, id2?: number) {
         let draggedElement = inWorkSpace.filter((e) => e.id != id);
         if (id2) {
@@ -83,9 +79,12 @@ function ElementList() {
                         </Container>
                     </div>
                 </div>
+                <div className="column-right">
+                    <Hanger>{}</Hanger>
+                </div>
             </div>
         </CardContext.Provider>
-    );
+);
 }
 
 export default ElementList;

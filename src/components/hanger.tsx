@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useDrop } from "react-dnd";
 import itemTypes from "../interfaces/itemTypes";
 
-import "./Trashbin.css";
+import "./Hanger.css";
 import "../App.css";
 import { CardContext } from "./ClothingList";
 
@@ -14,15 +14,12 @@ interface ITEM {
     type: string;
     ID: number;
 }
-function Trashbin(props: ContainerProps) {
+function Hanger(props: ContainerProps) {
     const { children } = props;
     const { removeElementFromScreen } = useContext(CardContext);
     const [, drop] = useDrop({
-        accept: itemTypes.ELEMENT,
-        drop: (item: ITEM) =>
-            item.ID < 50
-                ? removeElementFromScreen(item.ID)
-                : removeCompoundFromScreen(item.ID),
+        accept: itemTypes.CLOTHING,
+        drop: (item: ITEM) => removeElementFromScreen(item.ID),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
@@ -34,4 +31,4 @@ function Trashbin(props: ContainerProps) {
     );
 }
 
-export default Trashbin;
+export default Hanger;
