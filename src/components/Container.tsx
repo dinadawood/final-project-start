@@ -16,10 +16,10 @@ interface ITEM {
 }
 function Container(props: ContainerProps) {
     const { children } = props;
-    const { putInWorkSpace } = useContext(CardContext);
+    const { markAsDone } = useContext(CardContext);
     const [, drop] = useDrop({
         accept: itemTypes.CLOTHING,
-        drop: (item: ITEM, monitor) => putInWorkSpace(item.ID, monitor),
+        drop: (item: ITEM) => markAsDone(item.ID),
         collect: (monitor: { isOver: () => unknown }) => ({
             isOver: !!monitor.isOver()
         })
@@ -32,3 +32,4 @@ function Container(props: ContainerProps) {
 }
 
 export default Container;
+
