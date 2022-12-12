@@ -5,4 +5,6 @@ export interface Clothing {
     shown: boolean;
     height: number;
     width: number;
+    top: number;
+    left: number;
 }
