@@ -9,7 +9,6 @@ import { clothing } from "../clothingList";
 import ClothingObject from "./ClothingObject";
 
 import "./ClothingList.css";
-import Hanger from "./Hanger";
 import Container from "./Container";
 
 export const CardContext = createContext({
@@ -78,9 +77,6 @@ function ElementList() {
                             ))}
                         </Container>
                     </div>
-                </div>
-                <div className="column-right">
-                    <Hanger>{}</Hanger>
                 </div>
             </div>
         </CardContext.Provider>
