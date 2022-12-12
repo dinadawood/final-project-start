@@ -39,13 +39,11 @@ function ElementList() {
             </div>
         ));
     }
-
-    function removeElementFromScreen(id: number, id2?: number) {
-        let draggedElement = inWorkSpace.filter((e) => e.id != id);
-        if (id2) {
-            draggedElement = draggedElement.filter((e) => e.id != id2);
-        }
-        addtoWorkSpace(draggedElement);
+    function markAsDone(id: number) {
+        const draggedElement = proplist.filter((task, i) => task.id === id)[0];
+        const p = { ...draggedElement };
+        p.shown = true;
+        addtoWorkSpace(inWorkSpace.concat(p));
     }
     return (
         <CardContext.Provider value={{ markAsDone }}>
@@ -80,7 +78,7 @@ function ElementList() {
                 </div>
             </div>
         </CardContext.Provider>
-);
+    );
 }
 
 export default ElementList;
