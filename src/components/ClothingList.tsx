@@ -9,23 +9,20 @@ import { clothing } from "../clothingList";
 import ClothingObject from "./ClothingObject";
 
 import "./ClothingList.css";
-import Hanger from "./Hanger";
 import Container from "./Container";
-import { Form } from "react-bootstrap";
-import { XYCoord } from "react-dnd";
 
 export const CardContext = createContext({
-    putInWorkSpace: (id: number, monitor: any) => {},
-    removefromScreen: (id: number) => {}
+    // eslint-disable-next-line prettier/prettier
+    markAsDone: (id: number) => {}
 });
 
 function ElementList() {
     const [inWorkSpace, addtoWorkSpace] = useState<Clothing[]>([]);
-    const [clothinglist, setProplist] = useState<Clothing[]>(clothing);
+    const [proplist, setProplist] = useState<Clothing[]>(clothing);
 
     function Alphabetical() {
         console.log("hi");
-        const x = clothinglist.map((element: Clothing): Clothing => element);
+        const x = proplist.map((element: Clothing): Clothing => element);
         setProplist(x.sort((a, b) => a.name.localeCompare(b.name)));
     }
 
@@ -42,9 +39,14 @@ function ElementList() {
             </div>
         ));
     }
-
+    function markAsDone(id: number) {
+        const draggedElement = proplist.filter((task, i) => task.id === id)[0];
+        const p = { ...draggedElement };
+        p.shown = true;
+        addtoWorkSpace(inWorkSpace.concat(p));
+    }
     return (
-        <CardContext.Provider value={{ putInWorkSpace, removefromScreen }}>
+        <CardContext.Provider value={{ markAsDone }}>
             <div>
                 <div className="row-adj">
                     <div className="column-sidebar" background-color="primary">
@@ -60,9 +62,7 @@ function ElementList() {
                                 Reset List{" "}
                             </button>
                         </p>
-                        <ul className="scroll-bar">
-                            {generateList(clothinglist)}
-                        </ul>
+                        <ul className="scroll-bar">{generateList(proplist)}</ul>
                     </div>
                     <div className="column-center">
                         <img
@@ -76,12 +76,9 @@ function ElementList() {
                         </Container>
                     </div>
                 </div>
-                <div className="column-right">
-                    <Hanger>{}</Hanger>
-                </div>
             </div>
         </CardContext.Provider>
-);
+    );
 }
 
 export default ElementList;
