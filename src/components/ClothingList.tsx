@@ -10,19 +10,21 @@ import ClothingObject from "./ClothingObject";
 
 import "./ClothingList.css";
 import Container from "./Container";
+import { Form } from "react-bootstrap";
+import { XYCoord } from "react-dnd";
 
 export const CardContext = createContext({
-    // eslint-disable-next-line prettier/prettier
-    markAsDone: (id: number) => {}
+    putInWorkSpace: (id: number, monitor: any) => {},
+    removefromScreen: (id: number) => {}
 });
 
 function ElementList() {
     const [inWorkSpace, addtoWorkSpace] = useState<Clothing[]>([]);
-    const [proplist, setProplist] = useState<Clothing[]>(clothing);
+    const [clothinglist, setProplist] = useState<Clothing[]>(clothing);
 
     function Alphabetical() {
         console.log("hi");
-        const x = proplist.map((element: Clothing): Clothing => element);
+        const x = clothinglist.map((element: Clothing): Clothing => element);
         setProplist(x.sort((a, b) => a.name.localeCompare(b.name)));
     }
 
@@ -39,14 +41,37 @@ function ElementList() {
             </div>
         ));
     }
-    function markAsDone(id: number) {
-        const draggedElement = proplist.filter((task, i) => task.id === id)[0];
+    function moveElement(id: number, left: number, top: number) {
+        const draggedElement = inWorkSpace.filter((e) => e.id === id)[0];
+        draggedElement.left = left;
+        draggedElement.top = top;
+    }
+
+    function putInWorkSpace(id: number, monitor: any) {
+        const draggedElement = clothing.filter((e) => e.id === id)[0];
         const p = { ...draggedElement };
-        p.shown = true;
-        addtoWorkSpace(inWorkSpace.concat(p));
+        if (draggedElement == undefined) {
+            const draggedElement = inWorkSpace.filter((e, i) => e.id === id)[0];
+            const p = { ...draggedElement };
+            const delta = monitor.getDifferenceFromInitialOffset() as XYCoord;
+            const left = Math.round(p.left + delta.x);
+            const top = Math.round(p.top + delta.y);
+            moveElement(p.id, left, top);
+        } else if (draggedElement.shown == false) {
+            p.shown = true;
+            p.id = Math.random();
+            addtoWorkSpace(inWorkSpace.concat(p));
+        }
+    }
+    function removefromScreen(id: number, id2?: number) {
+        let draggedElement = inWorkSpace.filter((e, i) => e.id != id);
+        if (id2) {
+            draggedElement = draggedElement.filter((e, i) => e.id != id2);
+        }
+        addtoWorkSpace(draggedElement);
     }
     return (
-        <CardContext.Provider value={{ markAsDone }}>
+        <CardContext.Provider value={{ putInWorkSpace, removefromScreen }}>
             <div>
                 <div className="row-adj">
                     <div className="column-sidebar" background-color="primary">
@@ -62,7 +87,9 @@ function ElementList() {
                                 Reset List{" "}
                             </button>
                         </p>
-                        <ul className="scroll-bar">{generateList(proplist)}</ul>
+                        <ul className="scroll-bar">
+                            {generateList(clothinglist)}
+                        </ul>
                     </div>
                     <div className="column-center">
                         <img

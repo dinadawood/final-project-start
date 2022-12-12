@@ -6,7 +6,9 @@ const CropTop1: Clothing = {
     image: require("./images/cropTop1.png"),
     shown: false,
     height: 160,
-    width: 160
+    width: 160,
+    top: 118,
+    left: 225
 };
 
 const CropTop2: Clothing = {
@@ -15,7 +17,9 @@ const CropTop2: Clothing = {
     image: require("./images/cropTop2.png"),
     shown: false,
     height: 100,
-    width: 100
+    width: 100,
+    top: 118,
+    left: 225
 };
 
 const Dress1: Clothing = {
@@ -24,7 +28,9 @@ const Dress1: Clothing = {
     image: require("./images/dress1.png"),
     shown: false,
     height: 350,
-    width: 350
+    width: 350,
+    top: 118,
+    left: 225
 };
 
 const Dress2: Clothing = {
@@ -33,7 +39,9 @@ const Dress2: Clothing = {
     image: require("./images/dress2.png"),
     shown: false,
     height: 275,
-    width: 275
+    width: 275,
+    top: 118,
+    left: 225
 };
 
 const Dress3: Clothing = {
@@ -42,7 +50,9 @@ const Dress3: Clothing = {
     image: require("./images/dress3.png"),
     shown: false,
     height: 300,
-    width: 300
+    width: 300,
+    top: 118,
+    left: 225
 };
 
 const Hat1: Clothing = {
@@ -51,7 +61,9 @@ const Hat1: Clothing = {
     image: require("./images/hat1.png"),
     shown: false,
     height: 75,
-    width: 75
+    width: 75,
+    top: 118,
+    left: 225
 };
 
 const Hat2: Clothing = {
@@ -60,7 +72,9 @@ const Hat2: Clothing = {
     image: require("./images/hat2.png"),
     shown: false,
     height: 100,
-    width: 100
+    width: 100,
+    top: 118,
+    left: 225
 };
 
 const Jacket1: Clothing = {
@@ -69,7 +83,9 @@ const Jacket1: Clothing = {
     image: require("./images/jacket1.png"),
     shown: false,
     height: 215,
-    width: 215
+    width: 215,
+    top: 118,
+    left: 225
 };
 
 const Necklace1: Clothing = {
@@ -78,7 +94,9 @@ const Necklace1: Clothing = {
     image: require("./images/necklace1.png"),
     shown: false,
     height: 50,
-    width: 50
+    width: 50,
+    top: 118,
+    left: 225
 };
 
 const Necklace2: Clothing = {
@@ -87,7 +105,9 @@ const Necklace2: Clothing = {
     image: require("./images/necklace2.png"),
     shown: false,
     height: 60,
-    width: 60
+    width: 60,
+    top: 118,
+    left: 225
 };
 
 const Pants1: Clothing = {
@@ -96,7 +116,9 @@ const Pants1: Clothing = {
     image: require("./images/pants1.png"),
     shown: false,
     height: 300,
-    width: 200
+    width: 200,
+    top: 118,
+    left: 225
 };
 
 const Pants2: Clothing = {
@@ -105,7 +127,9 @@ const Pants2: Clothing = {
     image: require("./images/pants2.png"),
     shown: false,
     height: 320,
-    width: 200
+    width: 200,
+    top: 118,
+    left: 225
 };
 
 const Pants3: Clothing = {
@@ -114,7 +138,9 @@ const Pants3: Clothing = {
     image: require("./images/pants3.png"),
     shown: false,
     height: 340,
-    width: 260
+    width: 260,
+    top: 118,
+    left: 225
 };
 
 const Pants4: Clothing = {
@@ -123,7 +149,9 @@ const Pants4: Clothing = {
     image: require("./images/pants4.png"),
     shown: false,
     height: 340,
-    width: 280
+    width: 280,
+    top: 118,
+    left: 225
 };
 
 const Scarf1: Clothing = {
@@ -132,7 +160,9 @@ const Scarf1: Clothing = {
     image: require("./images/scarf1.png"),
     shown: false,
     height: 160,
-    width: 160
+    width: 160,
+    top: 118,
+    left: 225
 };
 
 const Shoes1: Clothing = {
@@ -141,7 +171,9 @@ const Shoes1: Clothing = {
     image: require("./images/shoes1.png"),
     shown: false,
     height: 80,
-    width: 80
+    width: 80,
+    top: 118,
+    left: 225
 };
 
 const Shorts1: Clothing = {
@@ -150,7 +182,9 @@ const Shorts1: Clothing = {
     image: require("./images/shorts1.png"),
     shown: false,
     height: 130,
-    width: 130
+    width: 130,
+    top: 118,
+    left: 225
 };
 
 const Shorts2: Clothing = {
@@ -159,7 +193,9 @@ const Shorts2: Clothing = {
     image: require("./images/shorts2.png"),
     shown: false,
     height: 150,
-    width: 130
+    width: 130,
+    top: 118,
+    left: 225
 };
 
 const Skirt1: Clothing = {
@@ -168,7 +204,9 @@ const Skirt1: Clothing = {
     image: require("./images/skirt1.png"),
     shown: false,
     height: 155,
-    width: 155
+    width: 155,
+    top: 118,
+    left: 225
 };
 
 const Skirt2: Clothing = {
@@ -177,7 +215,9 @@ const Skirt2: Clothing = {
     image: require("./images/skirt2.png"),
     shown: false,
     height: 140,
-    width: 140
+    width: 140,
+    top: 118,
+    left: 225
 };
 
 const Skirt3: Clothing = {
@@ -186,7 +226,9 @@ const Skirt3: Clothing = {
     image: require("./images/skirt3.png"),
     shown: false,
     height: 140,
-    width: 140
+    width: 140,
+    top: 118,
+    left: 225
 };
 
 const Skirt4: Clothing = {
@@ -195,7 +237,9 @@ const Skirt4: Clothing = {
     image: require("./images/skirt4.png"),
     shown: false,
     height: 200,
-    width: 220
+    width: 220,
+    top: 118,
+    left: 225
 };
 
 const Sweatshirt1: Clothing = {
@@ -204,7 +248,9 @@ const Sweatshirt1: Clothing = {
     image: require("./images/sweatshirt1.png"),
     shown: false,
     height: 210,
-    width: 210
+    width: 210,
+    top: 118,
+    left: 225
 };
 
 const Sweatshirt2: Clothing = {
@@ -213,7 +259,9 @@ const Sweatshirt2: Clothing = {
     image: require("./images/sweatshirt2.png"),
     shown: false,
     height: 200,
-    width: 200
+    width: 200,
+    top: 118,
+    left: 225
 };
 
 const Top1: Clothing = {
@@ -222,7 +270,9 @@ const Top1: Clothing = {
     image: require("./images/top1.png"),
     shown: false,
     height: 230,
-    width: 230
+    width: 230,
+    top: 118,
+    left: 225
 };
 
 const Top2: Clothing = {
@@ -231,7 +281,9 @@ const Top2: Clothing = {
     image: require("./images/top2.png"),
     shown: false,
     height: 160,
-    width: 160
+    width: 160,
+    top: 118,
+    left: 225
 };
 
 const Top3: Clothing = {
@@ -240,7 +292,9 @@ const Top3: Clothing = {
     image: require("./images/top3.png"),
     shown: false,
     height: 220,
-    width: 220
+    width: 220,
+    top: 118,
+    left: 225
 };
 
 const Top4: Clothing = {
@@ -249,7 +303,9 @@ const Top4: Clothing = {
     image: require("./images/top4.png"),
     shown: false,
     height: 170,
-    width: 170
+    width: 170,
+    top: 118,
+    left: 225
 };
 
 const Top5: Clothing = {
@@ -258,7 +314,9 @@ const Top5: Clothing = {
     image: require("./images/top5.png"),
     shown: false,
     height: 220,
-    width: 220
+    width: 220,
+    top: 118,
+    left: 225
 };
 
 const Top6: Clothing = {
@@ -267,7 +325,9 @@ const Top6: Clothing = {
     image: require("./images/top6.png"),
     shown: false,
     height: 175,
-    width: 175
+    width: 175,
+    top: 118,
+    left: 225
 };
 
 export const clothing = [
