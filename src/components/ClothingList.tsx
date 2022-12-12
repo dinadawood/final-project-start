@@ -9,6 +9,7 @@ import { clothing } from "../clothingList";
 import ClothingObject from "./ClothingObject";
 
 import "./ClothingList.css";
+import Hanger from "./Hanger";
 import Container from "./Container";
 import { Form } from "react-bootstrap";
 import { XYCoord } from "react-dnd";
@@ -41,35 +42,7 @@ function ElementList() {
             </div>
         ));
     }
-    function moveElement(id: number, left: number, top: number) {
-        const draggedElement = inWorkSpace.filter((e) => e.id === id)[0];
-        draggedElement.left = left;
-        draggedElement.top = top;
-    }
 
-    function putInWorkSpace(id: number, monitor: any) {
-        const draggedElement = clothing.filter((e) => e.id === id)[0];
-        const p = { ...draggedElement };
-        if (draggedElement == undefined) {
-            const draggedElement = inWorkSpace.filter((e, i) => e.id === id)[0];
-            const p = { ...draggedElement };
-            const delta = monitor.getDifferenceFromInitialOffset() as XYCoord;
-            const left = Math.round(p.left + delta.x);
-            const top = Math.round(p.top + delta.y);
-            moveElement(p.id, left, top);
-        } else if (draggedElement.shown == false) {
-            p.shown = true;
-            p.id = Math.random();
-            addtoWorkSpace(inWorkSpace.concat(p));
-        }
-    }
-    function removefromScreen(id: number, id2?: number) {
-        let draggedElement = inWorkSpace.filter((e, i) => e.id != id);
-        if (id2) {
-            draggedElement = draggedElement.filter((e, i) => e.id != id2);
-        }
-        addtoWorkSpace(draggedElement);
-    }
     return (
         <CardContext.Provider value={{ putInWorkSpace, removefromScreen }}>
             <div>
@@ -103,9 +76,12 @@ function ElementList() {
                         </Container>
                     </div>
                 </div>
+                <div className="column-right">
+                    <Hanger>{}</Hanger>
+                </div>
             </div>
         </CardContext.Provider>
-    );
+);
 }
 
 export default ElementList;
