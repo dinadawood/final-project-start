@@ -16,7 +16,7 @@ export const CardContext = createContext({
     markAsDone: (id: number) => {}
 });
 
-function ElementList() {
+function ClothingList() {
     const [inWorkSpace, addtoWorkSpace] = useState<Clothing[]>([]);
     const [proplist, setProplist] = useState<Clothing[]>(clothing);
 
@@ -25,7 +25,6 @@ function ElementList() {
         const x = proplist.map((element: Clothing): Clothing => element);
         setProplist(x.sort((a, b) => a.name.localeCompare(b.name)));
     }
-
     function Reset() {
         setProplist(clothing);
     }
@@ -81,4 +80,4 @@ function ElementList() {
     );
 }
 
-export default ElementList;
+export default ClothingList;
