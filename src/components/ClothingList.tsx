@@ -11,19 +11,21 @@ import ClothingObject from "./ClothingObject";
 import "./ClothingList.css";
 import Hanger from "./Hanger";
 import Container from "./Container";
+import { Form } from "react-bootstrap";
+import { XYCoord } from "react-dnd";
 
 export const CardContext = createContext({
-    // eslint-disable-next-line prettier/prettier
-    markAsDone: (id: number) => {}
+    putInWorkSpace: (id: number, monitor: any) => {},
+    removefromScreen: (id: number) => {}
 });
 
 function ElementList() {
     const [inWorkSpace, addtoWorkSpace] = useState<Clothing[]>([]);
-    const [proplist, setProplist] = useState<Clothing[]>(clothing);
+    const [clothinglist, setProplist] = useState<Clothing[]>(clothing);
 
     function Alphabetical() {
         console.log("hi");
-        const x = proplist.map((element: Clothing): Clothing => element);
+        const x = clothinglist.map((element: Clothing): Clothing => element);
         setProplist(x.sort((a, b) => a.name.localeCompare(b.name)));
     }
 
@@ -41,15 +43,8 @@ function ElementList() {
         ));
     }
 
-    function removeElementFromScreen(id: number, id2?: number) {
-        let draggedElement = inWorkSpace.filter((e) => e.id != id);
-        if (id2) {
-            draggedElement = draggedElement.filter((e) => e.id != id2);
-        }
-        addtoWorkSpace(draggedElement);
-    }
     return (
-        <CardContext.Provider value={{ markAsDone }}>
+        <CardContext.Provider value={{ putInWorkSpace, removefromScreen }}>
             <div>
                 <div className="row-adj">
                     <div className="column-sidebar" background-color="primary">
@@ -65,7 +60,9 @@ function ElementList() {
                                 Reset List{" "}
                             </button>
                         </p>
-                        <ul className="scroll-bar">{generateList(proplist)}</ul>
+                        <ul className="scroll-bar">
+                            {generateList(clothinglist)}
+                        </ul>
                     </div>
                     <div className="column-center">
                         <img
