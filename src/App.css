@@ -38,7 +38,18 @@
         transform: rotate(360deg);
     }
 }
-
+.scroll {
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    border: 1px solid grey;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: scroll;
+    text-align: center;
+}
 .cropTop1 {
     position: absolute;
     width: "100px";
@@ -89,6 +100,16 @@
     background-color: white;
 }
 
+.pants4 {
+    position: absolute;
+    width: "100px";
+    height: "100px";
+    border-radius: 0%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
 .skirt1 {
     position: absolute;
     width: "100px";
@@ -110,6 +131,16 @@
 }
 
 .skirt3 {
+    position: absolute;
+    width: "100px";
+    height: "100px";
+    border-radius: 0%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.skirt4 {
     position: absolute;
     width: "100px";
     height: "100px";
